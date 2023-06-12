@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/Index.css}" />
+    <title>Home</title>
+</head>
+<body style="background-color:antiquewhite;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+        <div class="container">
+          <a class="navbar-brand">Students</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="view">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="add">Add a new student</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="display">Display</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div style="padding-top: 4em;">
+      <table class="table table-hover table-bordered" id="StudentTable">   
+        <thead class="thead-dark ">
+          <tr>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Hair Color</th>
+            <th>GPA</th>
+
+            </tr>
+        </thead>
+        <tbody >
+          <tr th:each="student:${st}"  th:data-sid="${sid}">
+              <td th:text="${student.name}" ></td>
+              <td th:text="${student.last_name}"></td>
+              <td th:text="${student.height}"></td>
+              <td th:text="${student.weight}"></td>
+              <td th:text="${student.hair_color}"></td>
+              <td th:text="${student.GPA}"></td>
+              
+
+            <td class="button-cell text-center" style="background-color: transparent;">
+
+              <button class="btn btn-dark editButton" data-toggle="modal" data-target="#editModal" th:data-student-id="${student.sid}">Edit</button>
+            </td>
+             <td class="button-cell text-center" style="background-color: transparent;">
+              <button type="submit"  class="btn btn-danger deleteButton">Delete</button>  
+            </td>
+
+          </tr>
+      
+        </tbody>
+        
+      </table>
+      <div class="col"></div>
+
+      <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true" style="z-index: 1050;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Edit Student</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="editForm" action="/students/edit" method="post">
+                    <input type="hidden" id="id" name="id" value="">
+                    <div class="form-group">
+                      <label for="editName">Name:</label>
+                      <input type="text" class="form-control" id="editName" name="name" placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                      <label for="editLastName">Last Name:</label>
+                      <input type="text" class="form-control" id="editLastName" name="last_name" placeholder="Enter last name">
+                    </div>
+                    <div class="form-group">
+                      <label for="editHeight">Height:</label>
+                      <input type="number" class="form-control" id="editHeight"  min="0" max="300"  name="height" placeholder="Enter height">
+                    </div>
+                    <div class="form-group">
+                      <label for="editWeight">Weight:</label>
+                      <input type="number" class="form-control" id="editWeight"  min="0" max="500"  name="weight" placeholder="Enter weight">
+                    </div>
+                    <div class="form-group">
+                      <label for="editHairColor">Hair Color:</label>
+                      <input type="text" class="form-control" id="editHairColor" name="hair_color" placeholder="Enter hair color">
+                    </div>
+                    <div class="form-group">
+                      <label for="editGPA">GPA:</label>
+                      <input type="float" class="form-control"  min="0" max="4.5" id="editGPA" name="GPA" placeholder="Enter GPA">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                  
+                  </td>
+                  </form>
+         
+                </div>
+            </div>
+        </div>
+    </div>    
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script th:src="@{/Index.js}"></script>
+</body>
+
+</html>

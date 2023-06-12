@@ -1,0 +1,99 @@
+/* #diagram {
+    display: flex;
+    align-items: flex-end;
+    height: 300px;
+    border: 1px solid #000;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+ } */
+ /* .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; 
+  }
+  #histogram {
+    display: flex;
+    flex-direction: row; 
+  }
+  
+  .studentBar {
+    flex: 0 0 auto;
+    /*text-align: center;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    float:left; 
+    padding-right: 2em !important;
+  } */
+  
+  .box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 10px;
+    float: left;
+    background-color:cornflowerblue;
+    cursor:pointer;
+}
+  .name {
+    font-weight: bold;
+  }
+
+
+
+  /* #histogram {
+    white-space: nowrap;
+  }
+  
+  .student-bar {
+    display: inline-block;
+    background-color: #3498db;
+    height: 20px;
+    width: 50px; /* Adjust the width as per your preference 
+    margin-right: 5px;
+    cursor: pointer;
+  } */
+
+  .modal-backdrop {
+    z-index: unset !important;
+  }
+
+  .box {
+    /* background-color: #f1f1f1; */
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    background-color:cornflowerblue;
+    cursor:pointer;
+  }
+  
+  .box:hover {
+    background-color: #e1e1e1;
+  }
+  
+  /* Styling for the student name */
+  .student-name {
+    font-weight: bold;
+  }
+  
+  /* Styling for the GPA */
+  .student-gpa {
+    color: #888888;
+  }
+  
+  /* Styling for the name wrapper */
+  .name {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .form-group{
+    padding-bottom: 0.5em;
+  }
