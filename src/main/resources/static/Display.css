@@ -72,6 +72,9 @@
     transition: background-color 0.3s ease;
     background-color:cornflowerblue;
     cursor:pointer;
+    color:black;
+    text-align: center;
+    justify-content: center;
   }
   
   .box:hover {

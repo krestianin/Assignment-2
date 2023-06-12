@@ -41,7 +41,8 @@
         <div th:each="student : ${st}" class="box" th:data-student-id="${student.sid}" th:data-width="${student.weight}" th:data-height="${student.height}" th:data-name="${student.name}" th:data-last-name="${student.last_name}"  th:data-hair-color="${student.hair_color}" th:data-gpa="${student.GPA}">
           <tr>
             <td th:text="${student.name}"></td>
-            <td th:text="${student.GPA}"></td>
+            <br>
+            GPA: <td th:text="${student.GPA}" ></td>
           </tr>
         </div>
     </div>

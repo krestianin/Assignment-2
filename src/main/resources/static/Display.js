@@ -85,11 +85,11 @@ $(document).ready(function() {
     var width = $(this).data("width");
     var height = $(this).data("height");
     
-    $(this).css("width", width*2 + "px");
+    $(this).css("width", width*2.5 + "px");
     $(this).css("textContent", name );
     $(this).css("height", height*1.5 + "px");
 
-      
+  });
     $(this).click(function() {
       var studentId = $(this).data("student-id");
       var studentName = $(this).data("name");
@@ -109,7 +109,7 @@ $(document).ready(function() {
   
       $("#editModal").modal("show");
       });
-  });
+  
 
     
   $("#deleteButton").click(function() {
