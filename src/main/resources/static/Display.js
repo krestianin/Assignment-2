@@ -89,7 +89,6 @@ $(document).ready(function() {
     $(this).css("textContent", name );
     $(this).css("height", height*1.5 + "px");
 
-  });
     $(this).click(function() {
       var studentId = $(this).data("student-id");
       var studentName = $(this).data("name");
@@ -111,6 +110,7 @@ $(document).ready(function() {
       });
   
 
+    });
     
   $("#deleteButton").click(function() {
       $("#editForm").attr("action", "/students/deleteHisto").submit();
